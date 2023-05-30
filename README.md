@@ -2,7 +2,7 @@
 
 ## Date: 05/29/2023
 
-### By: [Tyler Spring](https://github.com/TGSpring), [Angelo Wheeler](https://github.com/xAngelo123), Benjamin Kim, [Ryan Hatamosa](https://github.com/PinoyColada)
+### By: [Tyler Spring](https://github.com/TGSpring), [Angelo Wheeler](https://github.com/xAngelo123), [Benjamin Kim](https://github.com/benjaminjkim88), [Ryan Hatamosa](https://github.com/PinoyColada)
 
 
 ***
