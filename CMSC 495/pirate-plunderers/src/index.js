@@ -1,11 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import './index.css';
 import { BrowserRouter } from 'react-router-dom'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-
+// Configures routing using React Router and renders the root component "App"
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
