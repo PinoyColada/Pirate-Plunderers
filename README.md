@@ -21,9 +21,9 @@
 ### ***Getting Started***
 
 1. Install Git on your system (skip this step if you already have downloaded it).
-2. Clone the repository.
-2. Do 'npm i' to install the dependencies of the project.
+2. Clone the repository using "npm clone (link from '<>Code' button)".
 3. Change the directory to 'pirate-punderers'.
-4. Do 'npm start' and the application should be successfully running!
+4. Do 'npm i' to install the dependencies of the project.
+5. Do 'npm start' and the application should be successfully running!
 
 ***
