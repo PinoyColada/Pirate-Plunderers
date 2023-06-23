@@ -1,6 +1,12 @@
+import { useNavigate } from "react-router-dom";
+
 const BackButton = () => {
+    const navigate = useNavigate();
+
     return (
-        <h1>Pretend this is a button</h1>
+        <button id="button-container" onClick={() => navigate('/')}>
+            Back
+        </button>
     )
 }
 
