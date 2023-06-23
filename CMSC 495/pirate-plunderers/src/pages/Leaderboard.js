@@ -1,7 +1,10 @@
+
+
+
 const Leaderboard = () => {
 
     return (
-        <div>
+        <div style={{ backgroundImage: `url()` }}>
             This is the Leaderboard Page
         </div>
     )
