@@ -1,11 +1,13 @@
-
-
+import background from "../images/leaderboard_background.mp4";
 
 const Leaderboard = () => {
 
     return (
-        <div style={{ backgroundImage: `url()` }}>
-            This is the Leaderboard Page
+
+        <div>
+            <video autoPlay loop muted className="bg-vid">
+                <source src={background} type="video/mp4" />
+            </video>
         </div>
     )
 
