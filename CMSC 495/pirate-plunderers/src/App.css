@@ -108,7 +108,7 @@ h5 {
 }
 
 .section-header {
-  text-decoration: underline
+  text-decoration: black underline;
 }
 
 @media screen and (max-width: 600px) {
