@@ -22,6 +22,7 @@ h5 {
 
 #leaderboard-title {
   text-align: center;
+  color: rgba(235, 217, 62);
 }
 
 #button-container {
@@ -62,7 +63,7 @@ h5 {
 
 .main-content-bottom,
 .main-content-top {
-  background: rgba(46, 147, 255);
+  background: rgba(46, 147, 255, 0.90);
   padding: 20px;
   width: 50%;
   margin: 1px auto;
@@ -71,6 +72,10 @@ h5 {
 
 .main-content-top {
   border-radius: 6px 6px 0 0;
+  padding: 20px;
+  width: 50%;
+  margin: 1px auto;
+  z-index: 1;
 }
 
 .main-content-bottom {
@@ -98,6 +103,7 @@ h5 {
   position: relative;
   width: 100%;
   height: auto;
+  text-align: center;
 }
 
 .column-container {
@@ -107,8 +113,8 @@ h5 {
   height: auto;
 }
 
-.section-header {
-  text-decoration: black underline;
+.table-content {
+  color: white;
 }
 
 @media screen and (max-width: 600px) {

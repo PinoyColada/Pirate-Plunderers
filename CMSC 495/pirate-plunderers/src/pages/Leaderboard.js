@@ -14,8 +14,8 @@ const Leaderboard = () => {
 
     function createNums(n) {
         let nums = [];
-        for (let i = 0; i < n; i++) {
-            nums.push(<p>{i}</p>);
+        for (let i = 1; i <= n; i++) {
+            nums.push(<p className="table-content">{i}</p>);
         }
         return nums;
     }
@@ -29,26 +29,25 @@ const Leaderboard = () => {
             <div className="container">
                 <div className="main-content-top">
                     <h1 id="leaderboard-title">Leaderboard</h1>
-
                 </div>
 
                 <div className="main-content-bottom">
                     <div className="section-container">
-                        <h4 className="column-container section-header">
-                            Ranking
+                        <h4 className="column-container">
+                            <u>Ranking</u>
                             {createNums(10)}
                         </h4>
-                        <h4 className="column-container section-header">
-                            Name
+                        <h4 className="column-container">
+                            <u>Name</u>
                             {names.map(name => {
-                                return <p>{name}</p>;
+                                return <p className="table-content">{name}</p>;
                             })}
                         </h4>
 
-                        <h4 className="column-container section-header">
-                            Score
+                        <h4 className="column-container">
+                            <u>Score</u>
                             {scores.map(score => {
-                                return <p>{score}</p>;
+                                return <p className="table-content">{score}</p>;
                             })}
                         </h4>
                     </div>
