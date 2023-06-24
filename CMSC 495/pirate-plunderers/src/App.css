@@ -18,7 +18,6 @@ h1, h2, h3, h4, h5 {
 
 #leaderboard-title {
   text-align: center;
-  color: ;
 }
 
 #button-container {
@@ -47,7 +46,7 @@ padding-top: 40px;
 }
 
 .main-content-bottom, .main-content-top {
-background: rgba(255, 255, 255, 0.95);
+background: rgba(46, 147, 255);
 padding: 20px;
 width: 50%;
 margin: 1px auto;
@@ -60,7 +59,7 @@ border-radius: 6px 6px 0 0;
 
 .main-content-bottom {
 border-radius: 0;
-background: rgba(255, 255, 255, 0.95);
+/* background: rgba(255, 255, 255, 0.95); */
 }
 
 .main-content-bottom a {
