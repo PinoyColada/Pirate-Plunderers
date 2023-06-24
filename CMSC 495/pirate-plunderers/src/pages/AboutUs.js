@@ -15,7 +15,18 @@ const AboutUs = () => {
 
                 <div className="main-content-bottom">
                     <div className="section-container">
-
+                        <div>
+                            <h5>Ryan</h5>
+                        </div>
+                        <div>
+                            <h5>Benjamin</h5>
+                        </div>
+                        <div>
+                            <h5>Tyler</h5>
+                        </div>
+                        <div>
+                            <h5>Angelo</h5>
+                        </div>
                     </div>
                 </div>
                 <div className="button-section">
