@@ -15,10 +15,10 @@ const Leaderboard = () => {
                 </div>
 
                 <div className="main-content-bottom">
-                    <div className="tabs-container">
-                        <h4>Ranking</h4>
-                        <h4>Name</h4>
-                        <h4>Score</h4>
+                    <div className="section-container">
+                        <h4 className="column-container section-header">Ranking</h4>
+                        <h4 className="column-container section-header">Name</h4>
+                        <h4 className="column-container section-header">Score</h4>
                     </div>
                 </div>
                 <div className="button-section">
