@@ -27,6 +27,17 @@ h1, h2, h3, h4, h5 {
   margin-top: 100px;
   text-align: center;
   height: auto;
+  border: none;
+  background: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+}
+
+.back-button {
+  width: 50%;
+  pointer-events: painted;
 }
 
 .button-section  {
