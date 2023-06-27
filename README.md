@@ -25,5 +25,4 @@
 3. Change the directory to 'pirate-punderers' where the package.json file is located in.
 2. Do 'npm i' to install the dependencies of the project.
 4. Do 'npm start' and the application should be successfully running!
-
 ***
