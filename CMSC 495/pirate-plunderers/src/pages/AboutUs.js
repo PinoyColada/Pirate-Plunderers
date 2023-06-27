@@ -16,10 +16,10 @@ const AboutUs = () => {
 
                 <div className="main-content-bottom">
                     <div className="section-container">
-                        <MemberInfo name="Ryan"/>
-                        <MemberInfo name="Ben"/>
-                        <MemberInfo name="Tyler"/>
-                        <MemberInfo name="Angelo"/>
+                        <MemberInfo name="Ryan" role="Team Lead"/>
+                        <MemberInfo name="Ben" role="Software Developer"/>
+                        <MemberInfo name="Tyler" role="Software Developer"/>
+                        <MemberInfo name="Angelo" role="Software Developer"/>
                     </div>
                 </div>
                 <div className="button-section">
