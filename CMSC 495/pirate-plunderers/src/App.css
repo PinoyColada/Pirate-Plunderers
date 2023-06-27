@@ -29,6 +29,13 @@ h5 {
   text-align: center;
 }
 
+#buttons-container {
+  display: flex;
+  justify-content: space-evenly;
+  padding-left: 8em;
+  padding-right: 8em;
+}
+
 .section-container > #profile-section {
   flex-basis: 40%;
 }
@@ -38,7 +45,6 @@ h5 {
 }
 
 #button-container {
-  width: 100%;
   display: block;
   position: relative;
   margin-top: 100px;
@@ -53,7 +59,7 @@ h5 {
 }
 
 .back-button {
-  width: 50%;
+  width: 30%;
   pointer-events: painted;
 }
 
