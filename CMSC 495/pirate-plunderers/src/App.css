@@ -1,38 +1,174 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+
+body {
+  font-family: 'Silkscreen';
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: inherit;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.button-icon {
+  color: black;
+  opacity: 0.6;
+  transition: 0.3s;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.button-icon:hover {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.bg-vid {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+#leaderboard-title {
+  text-align: center;
+  color: rgba(235, 217, 62);
+}
+
+#about-us-title {
+  text-align: center;
+}
+
+#buttons-container {
+  display: flex;
+  justify-content: space-evenly;
+  padding-left: 8em;
+  padding-right: 8em;
+}
+
+.section-container > #profile-section {
+  flex-basis: 40%;
+}
+
+#profile-section {
+  padding: 1.5em 1em 1.5em 1em;
+}
+
+#button-container {
+  display: block;
+  position: relative;
+  margin-top: 100px;
+  text-align: center;
+  height: auto;
+  border: none;
+  background: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+}
+
+.back-button {
+  width: 30%;
+  pointer-events: painted;
+}
+
+.back-button:hover {
+  filter: brightness(50%)
+}
+
+.button-section {
+  padding: 20px;
+  width: 40%;
+  margin: 1px auto;
+  z-index: 2;
+  border-radius: 0 0 6px 6px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 40px;
+}
+
+.main-content-bottom,
+.main-content-top {
+  background: rgba(46, 147, 255, 0.90);
+  padding: 20px;
+  width: 50%;
+  margin: 1px auto;
+  z-index: 1;
+}
+
+.main-content-top {
+  border-radius: 6px 6px 0 0;
+  padding: 20px;
+  width: 50%;
+  margin: 1px auto;
+  z-index: 1;
+}
+
+.main-content-bottom {
+  border-radius: 0;
+}
+
+.main-content-bottom a {
+  color: #666;
+  font-size: .9em;
+  outline: none;
+  border: none;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.main-content-bottom a:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+.section-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  position: relative;
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+
+.column-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: auto;
+}
+
+.table-content {
+  color: white;
+}
+
+@media screen and (max-width: 600px) {
+  .main-content-bottom,
+  .main-content-top,
+  .button-section {
+    width: 85%;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1599px) {
+  .main-content-bottom,
+  .main-content-top,
+  .button-section {
+    width: 60%;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .main-content-bottom,
+  .main-content-top,
+  .button-section {
+    width: 40%;
   }
 }

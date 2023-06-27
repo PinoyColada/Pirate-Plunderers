@@ -1,4 +1,6 @@
 import React, { useEffect } from "react";
+import cannonImage from '../images/cannon.jpg';
+import enemyPirateImage from '../images/pirate_ship.jpg';
 
 const Game = () => {
   useEffect(() => {
@@ -22,7 +24,7 @@ const Game = () => {
         //making player visible and loading image, what player will look like
         this.opacity = 1
         const image = new Image()
-        image.src = 'cannon.jpg'
+        image.src = cannonImage
         image.onload = () => {
           const size = .28
           this.image = image
@@ -138,7 +140,7 @@ const Game = () => {
         }
 
         const image = new Image()
-        image.src = 'pirate_ship.jpg'
+        image.src = enemyPirateImage
         image.onload = () => {
           const size = .15
           this.image = image
