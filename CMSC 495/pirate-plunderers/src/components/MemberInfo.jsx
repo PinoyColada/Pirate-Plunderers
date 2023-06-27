@@ -1,7 +1,8 @@
 const MemberInfo = (props) => {
     return (
         <div>
-            <h5>{props.name}</h5>
+            <img src={props.image} alt={`${props.image} headshot`} />
+            <h3>{props.name}</h3>
             <h4>{props.role}</h4>
         </div>
     )

@@ -25,6 +25,10 @@ h5 {
   color: rgba(235, 217, 62);
 }
 
+#about-us-title {
+  text-align: center;
+}
+
 #button-container {
   width: 100%;
   display: block;
