@@ -29,6 +29,14 @@ h5 {
   text-align: center;
 }
 
+.section-container > #profile-section {
+  flex-basis: 40%;
+}
+
+#profile-section {
+  padding: 1.5em 1em 1.5em 1em;
+}
+
 #button-container {
   width: 100%;
   display: block;
@@ -102,7 +110,7 @@ h5 {
 
 .section-container {
   display: flex;
-  flex-direction: row;
+  flex-flow: row wrap;
   justify-content: space-around;
   position: relative;
   width: 100%;

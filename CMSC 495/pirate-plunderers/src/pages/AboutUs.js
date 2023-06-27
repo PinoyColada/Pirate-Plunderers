@@ -15,7 +15,7 @@ const AboutUs = () => {
             </video>
             <div className="container">
                 <div className="main-content-top">
-                    <h1 id="about-us-title">Meet the team</h1>
+                    <h1 id="about-us-title">Meet "the bro-grammers" team</h1>
                 </div>
 
                 <div className="main-content-bottom">
