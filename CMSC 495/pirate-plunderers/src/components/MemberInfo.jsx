@@ -7,8 +7,12 @@ const MemberInfo = (props) => {
             <h3>{props.name}</h3>
             <h4>{props.role}</h4>
             <div id='buttons-container'>
-                <FaGithub size='2rem' />
-                <FaLinkedin size='2rem' />
+                <a href={props.github} rel="noreferrer" target="_blank">
+                    <FaGithub className="button-icon" size='2rem' />
+                </a>
+                <a href={props.linkedin} rel="noreferrer" target="_blank">
+                    <FaLinkedin className="button-icon" size='2rem' />
+                </a>
             </div>
         </div>
     )

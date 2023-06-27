@@ -12,6 +12,16 @@ h5 {
   font-family: inherit;
 }
 
+.button-icon {
+  color: black;
+  opacity: 0.6;
+  transition: 0.3s;
+}
+
+.button-icon:hover {
+  color: white;
+}
+
 .bg-vid {
   position: fixed;
   width: 100%;
