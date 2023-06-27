@@ -1,6 +1,8 @@
-const MemberInfo = () => {
+const MemberInfo = (props) => {
     return (
-       <div>Member info component</div>
+        <div>
+            <h5>{props.name}</h5>
+        </div>
     )
 }
 

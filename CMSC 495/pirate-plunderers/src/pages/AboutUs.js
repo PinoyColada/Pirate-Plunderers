@@ -1,5 +1,6 @@
 import background from "../images/about_us_background.mp4";
 import BackButton from "../components/BackButton";
+import MemberInfo from "../components/MemberInfo";
 
 const AboutUs = () => {
 
@@ -15,18 +16,10 @@ const AboutUs = () => {
 
                 <div className="main-content-bottom">
                     <div className="section-container">
-                        <div>
-                            <h5>Ryan</h5>
-                        </div>
-                        <div>
-                            <h5>Benjamin</h5>
-                        </div>
-                        <div>
-                            <h5>Tyler</h5>
-                        </div>
-                        <div>
-                            <h5>Angelo</h5>
-                        </div>
+                        <MemberInfo name="Ryan"/>
+                        <MemberInfo name="Ben"/>
+                        <MemberInfo name="Tyler"/>
+                        <MemberInfo name="Angelo"/>
                     </div>
                 </div>
                 <div className="button-section">
