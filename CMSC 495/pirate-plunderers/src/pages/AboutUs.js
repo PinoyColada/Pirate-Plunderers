@@ -23,18 +23,26 @@ const AboutUs = () => {
                         <MemberInfo name="Ryan Hatamosa"
                          role="Team Lead"
                          image={ryan}
+                         github="https://github.com/PinoyColada"
+                         linkedin="https://www.linkedin.com/in/ryan-hatamosa/"
                          />
                         <MemberInfo name="Benjamin Kim" 
                         role="Software Developer"
                         image={benjamin}
+                        github="https://github.com/benjaminjkim88"
+                        linkedin="https://www.linkedin.com/in/benkim88/"
                         />
                         <MemberInfo name="Tyler Spring" 
                         role="Software Developer"
                         image={tyler}
+                        github="https://github.com/TGSpring"
+                        linkedin="https://www.linkedin.com/in/tyler-spring-6a7099143/"
                         />
                         <MemberInfo name="Angelo Wheeler" 
                         role="Software Developer"
                         image={angelo}
+                        github="https://github.com/xAngelo123"
+                        linkedin="https://www.linkedin.com/in/angelo-wheeler-6bb148b7/"
                         />
                     </div>
                 </div>
