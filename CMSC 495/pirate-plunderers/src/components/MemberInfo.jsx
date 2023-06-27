@@ -1,5 +1,7 @@
 import { FaGithub, FaLinkedin } from 'react-icons/fa6';
 
+// This component creates a profile section where you can pass an image,
+// name, role, github, and link value
 const MemberInfo = (props) => {
     return (
         <div id="profile-section">
