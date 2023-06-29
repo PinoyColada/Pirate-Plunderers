@@ -37,7 +37,7 @@ def score_update():
     
     return scoreboard
 
-@app.route('/get_score',methods=['POST'])
+@app.route('/get_score',methods=['GET'])
 def get_score():
     """This function is used to get the scoreboard to display on the JS leaderboard page"""
     scoreboard = pandas.read_csv(FILEPATH)
@@ -45,7 +45,7 @@ def get_score():
 
     return scoreboard
 
-if __name__ == '_main__':
+if __name__ == '__main__':
     app.run()
 
 #internal function for clearing the entire leaderboard
