@@ -1,6 +1,8 @@
-import React, { useEffect } from "react";
-import cannonImage from '../images/cannon.jpg';
-import enemyPirateImage from '../images/pirate_ship.jpg';
+import React, { useEffect, useState } from "react";
+import cannonImage from '../images/cannon.png';
+import enemyPirateImage from '../images/pirate_ship.png';
+import logo from '../images/logo.png';
+import logo2 from '../images/logo2.png'
 
 const Game = () => {
   useEffect(() => {
@@ -467,26 +469,79 @@ const Game = () => {
     };
   }, []);
 
+//cards for game instructions
+const[cards] = useState([
+  {
+    title: <font color = "#d7de11">Controls</font>,
+    text: 'Use the "A" and "D" keys to move from left to right. Use the "Spacebar" key to fire. '
+  },
+  {
+    title: <font color = "#d7de11">Scoring</font>,
+    text: 'Destroy enemy ships to gain points. Your score will be tallied at the end of the game if your ship is destroyed.'
+  },
 
-  return (
-    <div style={{ position: 'relative' }}>
-      <p
-        style={{
-          position: 'absolute',
-          zIndex: 10,
-          color: 'white',
-          left: '10px',
-          top: '10px',
-          margin: 0,
-          fontFamily: 'sans-serif',
-          fontSize: '14px',
-        }}
-      >
-        <span>Score:</span> <span id="scoreC">0</span>
-      </p>
-      <canvas></canvas>
+  {
+    title: <font color = "#d7de11">Mechanics</font>,
+    text: 'The enemy ships are descending from the top of the screen in waves. Maneuver the player controlled cannon to dodge and fire at the enemy ships. If enemy projectiles reach the cannon, its GAME OVER.'
+  },
+  {
+    title: <font color = "#d7de11">Tips</font>,
+    text: 'Prioritize shooting ships that are closest to the cannon. Pay attention to the enemy projectiles and dodge as quickly as you can.'
+  },
+  
+])
+return (
+  
+  <section className = "entirePage">
+    <section className = "opener">
+      <img src = {logo} alt = "logo"/>
+      <img src = {logo2} alt = "logo2"/>
+    </section>
+  <div style={{ position: 'relative' }}>
+    <p
+      style={{
+        position: 'absolute',
+        zIndex: 10,
+        color: 'white',
+        left: '10px',
+        top: '10px',
+        margin: 0,
+        fontFamily: 'sans-serif',
+        fontSize: '14px',
+      }}
+    >
+      <span>Score:</span> <span id="scoreC">0</span>
+    </p>
+    <canvas></canvas>
+  </div>
+
+  <section className = "cardSection">
+  <div className = " container">
+    <h1>Instructions</h1>
+    <p>
+      Objective: Your ship is under attack. Destroy the enemy ships.
+    </p>
+    <div className = "cards">
+      {
+        cards.map((card,i) => (
+          <div key = {i} className="card">
+        <h3>
+          {card.title}
+          </h3>
+        <p>
+          {card.text}
+        </p>
+
+      </div>
+        ))
+      }
+      
     </div>
-  );
+  </div>
+  </section>
+  
+  </section>
+);
 };
 
 export default Game;
