@@ -1,3 +1,4 @@
+import { useState, useEffect} from 'react'
 import background from "../images/leaderboard_background.mp4";
 import BackButton from "../components/BackButton";
 
@@ -5,12 +6,19 @@ import BackButton from "../components/BackButton";
 
 const Leaderboard = () => {
 
-    // placeholders till backend is ready to fetch information from
-    const names = ["Batman", "Daredevil", "Hawkeye", "Superman", "Thor",
-        "Robin", "Wolverine", "Aquaman", "Hulk", "Vision"];
+    const [data, setData] = useState([{}])
 
-    const scores = [5200, 4000, 2700, 2400, 2000,
-        1500, 1400, 1000, 650, 200];
+    // calls the "get_score" route from the back-end
+    // and stores it in the "data" state
+    useEffect(() => {
+        fetch("/get_score").then(
+            res => res.json()
+        ).then(
+            data => {
+                setData(data)
+            }
+        )
+    },[])
 
     function createNums(n) {
         let nums = [];
@@ -39,15 +47,15 @@ const Leaderboard = () => {
                         </h4>
                         <h4 className="column-container">
                             <u>Name</u>
-                            {names.map(name => {
-                                return <p className="table-content">{name}</p>;
+                            {data.map(user => {
+                                return <p className="table-content">{user.Player}</p>;
                             })}
                         </h4>
-
+                        
                         <h4 className="column-container">
                             <u>Score</u>
-                            {scores.map(score => {
-                                return <p className="table-content">{score}</p>;
+                            {data.map(user => {
+                                return <p className="table-content">{user.Score}</p>;
                             })}
                         </h4>
                     </div>
