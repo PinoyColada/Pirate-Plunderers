@@ -172,3 +172,119 @@ h5 {
     width: 40%;
   }
 }
+
+
+/*CSS for Instructions and Logos*/
+.entirePage{
+  position: relative;
+  top: -25rem;
+}
+
+.opener{
+  position: relative;
+  top: 33.5rem;
+}
+
+@media screen and (max-height: 827px) and (min-height: 625px){
+  .opener{
+    position: relative;
+    top: 25.5rem;
+  }
+  
+}
+
+@media screen and (max-height: 700px) and (min-height: 612px){
+  .opener{
+    position: relative;
+    top: 20.5rem;
+  }
+  
+}
+
+@media screen and (max-height: 611px){
+  .opener{
+    position: relative;
+    top: 12.5rem;
+  }
+  
+}
+
+
+.cardSection {
+  margin: 0;
+  padding: 100;
+  padding-top: 10;
+  box-sizing: border-box;
+  font-family: 'Silkscreen';
+  position: relative;
+  top: -120px;
+
+}
+@media screen and (max-height: 827px) and (min-height: 625px){
+  .cardSection{
+    position: relative;
+    top: -2.5rem;
+  }
+  
+}
+
+@media screen and (max-height: 624px){
+  .cardSection{
+    position: relative;
+    top: -3.5rem;
+  }
+  
+}
+
+
+body{
+  background-color: #f5f5f5;
+  color: #111;
+}
+
+.container{
+  max-width: 1300px;
+  width: 100%;
+  margin:auto;
+}
+
+
+
+section{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+h1{
+  font-size: 50px;
+  line-height: 60px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.cards{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card{
+  flex: 0 0 calc(33.33% - 20px);
+  max-width: calc(33.33% -20px);
+  width: 100%;
+  background: #0f7de4;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: .3s;
+  border: 2px solid transparent;
+}
+
+.card:hover{
+  border-color: #d7de11;
+}
+
+
