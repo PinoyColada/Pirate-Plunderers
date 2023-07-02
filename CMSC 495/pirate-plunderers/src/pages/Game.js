@@ -243,7 +243,7 @@ const Game = () => {
       d: {
         pressed: false
       },
-      space: {
+      w: {
         pressed: false
       }
     }
