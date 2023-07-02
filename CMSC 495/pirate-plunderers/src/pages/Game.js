@@ -427,7 +427,7 @@ const Game = () => {
           console.log('right');
           controls.d.pressed = true;
           break;
-        case ' ':
+        case 'w':
           console.log('shoot');
           cBalls.push(
             new Ammo({
@@ -455,7 +455,7 @@ const Game = () => {
         case 'd':
           controls.d.pressed = false;
           break;
-        default:
+          controls.w.pressed = false;
           break;
       }
     };
