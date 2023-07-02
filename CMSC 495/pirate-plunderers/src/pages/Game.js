@@ -455,8 +455,14 @@ const Game = () => {
         case 'd':
           controls.d.pressed = false;
           break;
-          controls.w.pressed = false;
-          break;
+      }
+    };
+
+    //Used to prevent space bar from moving screen down.
+    window.onkeydown = function(e){
+      var elem = e.target.nodename;
+      if (elem !== 'TEXTAREA' && elem != 'INPUT'){
+        return !(e.keyCode == 32)
       }
     };
 
