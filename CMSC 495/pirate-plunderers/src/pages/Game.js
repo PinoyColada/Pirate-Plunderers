@@ -6,14 +6,19 @@ import torch from '../images/torch.gif';
 
 const Game = () => {
 
-  const [name, setName] = useState("Tes");
+  const [name, setName] = useState("");
+  const [score, setScore] = useState(0);
   const canvasRef = useRef(null);
 
+  const handleNameChange = (event) => {
+    const target = event.target.value;
+    setName(target);
+  }
   useEffect(() => {
 
 
     if (name === "Test") {
-      
+
       const canvas = canvasRef.current;
       const scoreC = document.querySelector('#scoreC')
       const c = canvas.getContext('2d')
@@ -374,6 +379,8 @@ const Game = () => {
                   if (priateFound && cBallFound) {
                     score += 100
                     scoreC.innerHTML = score
+                    setScore(score)
+                    // console.log(score)
                     createExplosion({
                       object: pirate
                     })
@@ -505,64 +512,66 @@ const Game = () => {
 
   if (name === "Test") {
     return (
-        <section className="game-page">
-          <div>
-            <img src={torch} alt="logo2" />
-            <img src={logo2} alt="logo2" />
-            <img src={torch} alt="logo2" />
-          </div>
-          <div style={{ position: 'relative' }}>
-            <p
-              style={{
-                position: 'absolute',
-                zIndex: 10,
-                color: 'white',
-                left: '10px',
-                top: '10px',
-                margin: 0,
-                fontFamily: 'sans-serif',
-                fontSize: '14px',
-              }}
-            >
-              <span>Score:</span> <span id="scoreC">0</span>
-            </p>
-            <canvas ref={canvasRef} width = "1024" height = "576"/>
-          </div>
-        </section>
-    )};
-  return (
       <section className="game-page">
         <div>
           <img src={torch} alt="logo2" />
           <img src={logo2} alt="logo2" />
           <img src={torch} alt="logo2" />
         </div>
-        <section className="cardSection">
-          <div className=" container">
-            <h1>Instructions</h1>
-            <p>
-              Objective: Your ship is under attack. Destroy the enemy ships.
-            </p>
-            <div className="cards">
-              {
-                cards.map((card, i) => (
-                  <div key={i} className="card">
-                    <h3>
-                      {card.title}
-                    </h3>
-                    <p>
-                      {card.text}
-                    </p>
+        <div style={{ position: 'relative' }}>
+          <p
+            style={{
+              position: 'absolute',
+              zIndex: 10,
+              color: 'white',
+              left: '10px',
+              top: '10px',
+              margin: 0,
+              fontFamily: 'sans-serif',
+              fontSize: '14px',
+            }}
+          >
+            <span>Score:</span> <span id="scoreC">0</span>
+          </p>
+          <canvas ref={canvasRef} width="1024" height="576" />
+        </div>
+      </section>
+    )
+  };
+  return (
+    <section className="game-page">
+      <div>
+        <img src={torch} alt="logo2" />
+        <img src={logo2} alt="logo2" />
+        <img src={torch} alt="logo2" />
+      </div>
+      <section className="cardSection">
+        <div className=" container">
+          <h1>Instructions</h1>
+          <p>
+            Objective: Your ship is under attack. Destroy the enemy ships.
+          </p>
+          <div className="cards">
+            {
+              cards.map((card, i) => (
+                <div key={i} className="card">
+                  <h3>
+                    {card.title}
+                  </h3>
+                  <p>
+                    {card.text}
+                  </p>
 
-                  </div>
-                ))
-              }
+                </div>
+              ))
+            }
 
-            </div>
           </div>
-        </section>
+        </div>
+        <input className="user-form-layout-input" placeholder="Enter your name" type="text" name="Name" onChange={handleNameChange} />
         <button onClick={() => setName('Test')}>Click this</button>
       </section>
+    </section>
   );
 };
 
