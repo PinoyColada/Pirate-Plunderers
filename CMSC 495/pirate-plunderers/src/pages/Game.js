@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import cannonImage from '../images/cannon.png';
 import enemyPirateImage from '../images/pirate_ship.png';
 import logo2 from '../images/logo2.png';
@@ -6,21 +6,17 @@ import torch from '../images/torch.gif';
 
 const Game = () => {
 
-  const [name, setName] = useState("Test");
-
+  const [name, setName] = useState("Tes");
+  const canvasRef = useRef(null);
 
   useEffect(() => {
 
-    if (name !== "Test") {
 
-
-      const canvas = document.querySelector('canvas')
+    if (name === "Test") {
+      
+      const canvas = canvasRef.current;
       const scoreC = document.querySelector('#scoreC')
       const c = canvas.getContext('2d')
-
-      //preset size for game
-      canvas.width = 1024
-      canvas.height = 576
 
       //player class for loading player in
       class Player {
@@ -470,8 +466,8 @@ const Game = () => {
       //Used to prevent space bar from moving screen down.
       window.onkeydown = function (e) {
         var elem = e.target.nodename;
-        if (elem !== 'TEXTAREA' && elem != 'INPUT') {
-          return !(e.keyCode == 32)
+        if (elem !== 'TEXTAREA' && elem !== 'INPUT') {
+          return !(e.keyCode === 32)
         }
       };
 
@@ -506,31 +502,35 @@ const Game = () => {
     },
 
   ],)
-  return (
 
-    { name } === "Test" ?
-      <section className="entirePage">
-        <section className="opener">
+  if (name === "Test") {
+    return (
+        <section className="game-page">
+          <div>
+            <img src={torch} alt="logo2" />
+            <img src={logo2} alt="logo2" />
+            <img src={torch} alt="logo2" />
+          </div>
+          <div style={{ position: 'relative' }}>
+            <p
+              style={{
+                position: 'absolute',
+                zIndex: 10,
+                color: 'white',
+                left: '10px',
+                top: '10px',
+                margin: 0,
+                fontFamily: 'sans-serif',
+                fontSize: '14px',
+              }}
+            >
+              <span>Score:</span> <span id="scoreC">0</span>
+            </p>
+            <canvas ref={canvasRef} width = "1024" height = "576"/>
+          </div>
         </section>
-        <div style={{ position: 'relative' }}>
-          <p
-            style={{
-              position: 'absolute',
-              zIndex: 10,
-              color: 'white',
-              left: '10px',
-              top: '10px',
-              margin: 0,
-              fontFamily: 'sans-serif',
-              fontSize: '14px',
-            }}
-          >
-            <span>Score:</span> <span id="scoreC">0</span>
-          </p>
-          <canvas></canvas>
-        </div>
-      </section>
-      :
+    )};
+  return (
       <section className="game-page">
         <div>
           <img src={torch} alt="logo2" />
@@ -561,7 +561,7 @@ const Game = () => {
             </div>
           </div>
         </section>
-        <button onClick={() => setName('Test2')}>Click this</button>
+        <button onClick={() => setName('Test')}>Click this</button>
       </section>
   );
 };
