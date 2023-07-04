@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request
 import pandas
 import json
 
@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 #assign constants to json and csv file
 FILEPATH = 'top10.csv'
-NEW_SCORE = 'scoreC.json'
+# NEW_SCORE = 'scoreC.json'
 
 @app.route('/score-update',methods=['POST'])
 def score_update():
@@ -16,12 +16,14 @@ def score_update():
     numbers, lowest score is deleted from the table if the table is now over 10 players"""
     
     #open score and playername from frontend and convert to pandas dataframe
-    with open(NEW_SCORE) as f:
-        data = json.load(f)
-        new_row = pandas.DataFrame([data])
-
+    data = json.loads(request.data)
+    print(data)
+    new_row = pandas.DataFrame([data])
+    print(new_row)
     placemark = int(new_row['Score'])
+    print(placemark)
     scoreboard = pandas.read_csv(FILEPATH)
+    print(scoreboard)
 
     #sorting incoming JSON score into appropriate row depending on score 
     for index,row in scoreboard.iterrows():
@@ -35,7 +37,7 @@ def score_update():
 
     scoreboard.to_csv(FILEPATH,index=False)#write updated scoreboard to the Excel spreadsheet
     
-    return scoreboard
+    return {'201': 'score created successfully'}
 
 @app.route('/get_score',methods=['GET'])
 def get_score():

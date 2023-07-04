@@ -335,8 +335,17 @@ const Game = () => {
               pirateAmmo.splice(index, 1)
               user.opacity = 0
               game.over = true
-              setGameOver(true);
+              // call to back-end once a user loses a game to send over their score and username
+              fetch("/score-update", {
+                method:'POST',
+                body: JSON.stringify({
+                  Player: name,
+                  Score: score
+                }),
+                  "Content-type":"application/json"
+              }).then(response => response.json())
             }, 0)
+            setGameOver(true);
             //waits 2 seconds if game is over.
             setTimeout(() => {
               game.active = false
@@ -489,6 +498,7 @@ const Game = () => {
         document.removeEventListener('keydown', handleKeyDown);
         document.removeEventListener('keyup', handleKeyUp);
       };
+
     }
   }, [name]);
 
