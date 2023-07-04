@@ -5,7 +5,13 @@ import logo from '../images/logo.png';
 import logo2 from '../images/logo2.png'
 
 const Game = () => {
+
+  const [name, setName] = useState("Test");
+
+
   useEffect(() => {
+
+    if (name !== "Test") {
 
     const canvas = document.querySelector('canvas')
     const scoreC = document.querySelector('#scoreC')
@@ -475,7 +481,8 @@ const Game = () => {
       document.removeEventListener('keydown', handleKeyDown);
       document.removeEventListener('keyup', handleKeyUp);
     };
-  }, []);
+    }
+  }, [name]);
 
 //cards for game instructions
 const[cards] = useState([
@@ -497,9 +504,10 @@ const[cards] = useState([
     text: 'Prioritize shooting ships that are closest to the cannon. Pay attention to the enemy projectiles and dodge as quickly as you can.'
   },
   
-])
+], )
 return (
   
+  {name} === "Test" ?
   <section className = "entirePage">
     <section className = "opener">
       {/* <img src = {logo} alt = "logo"/>
@@ -549,6 +557,9 @@ return (
   </section> */}
   
   </section>
+  :
+
+  <h1>Test</h1>
 );
 };
 
