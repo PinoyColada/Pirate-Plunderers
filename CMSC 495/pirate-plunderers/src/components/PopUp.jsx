@@ -2,17 +2,8 @@ import React, { useState } from "react";
 
 const PopUp = (props) => {
 
-    const [popup, setPopUp] = useState(false);
-
-    const togglePopUp = () => {
-        setPopUp(!popup)
-    }
-
     return (
         <>
-        <button onClick={togglePopUp} className="btn-modal">
-            
-        </button>
         <div className="popup">
             <div className="overlay"></div>
             <div className="popup-content">

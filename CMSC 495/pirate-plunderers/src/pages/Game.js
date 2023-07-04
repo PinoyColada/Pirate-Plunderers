@@ -3,11 +3,14 @@ import cannonImage from '../images/cannon.png';
 import enemyPirateImage from '../images/pirate_ship.png';
 import logo2 from '../images/logo2.png';
 import torch from '../images/torch.gif';
+import PopUp from '../components/PopUp'
 
 const Game = () => {
 
   const [name, setName] = useState("");
   const [score, setScore] = useState(0);
+  const [gameOver, setGameOver] = useState(false);
+
   const canvasRef = useRef(null);
 
   const handleNameChange = (event) => {
@@ -332,6 +335,7 @@ const Game = () => {
               pirateAmmo.splice(index, 1)
               user.opacity = 0
               game.over = true
+              setGameOver(true);
             }, 0)
             //waits 2 seconds if game is over.
             setTimeout(() => {
@@ -510,7 +514,7 @@ const Game = () => {
 
   ],)
 
-  if (name === "Test") {
+  if (name === "Test" && gameOver !== true) {
     return (
       <section className="game-page">
         <div>
@@ -536,6 +540,10 @@ const Game = () => {
           <canvas ref={canvasRef} width="1024" height="576" />
         </div>
       </section>
+    )
+  } else if (name === "Test" && gameOver === true) {
+    return (
+      <PopUp score={score} name={name} />
     )
   };
   return (
