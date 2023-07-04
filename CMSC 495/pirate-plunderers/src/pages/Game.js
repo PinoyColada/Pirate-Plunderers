@@ -455,6 +455,8 @@ const Game = () => {
         case 'd':
           controls.d.pressed = false;
           break;
+        default: 
+          break;
       }
     };
 
@@ -500,8 +502,8 @@ return (
   
   <section className = "entirePage">
     <section className = "opener">
-      <img src = {logo} alt = "logo"/>
-      <img src = {logo2} alt = "logo2"/>
+      {/* <img src = {logo} alt = "logo"/>
+      <img src = {logo2} alt = "logo2"/> */}
     </section>
   <div style={{ position: 'relative' }}>
     <p
@@ -521,7 +523,7 @@ return (
     <canvas></canvas>
   </div>
 
-  <section className = "cardSection">
+  {/* <section className = "cardSection">
   <div className = " container">
     <h1>Instructions</h1>
     <p>
@@ -544,7 +546,7 @@ return (
       
     </div>
   </div>
-  </section>
+  </section> */}
   
   </section>
 );
