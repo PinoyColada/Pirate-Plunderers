@@ -558,9 +558,9 @@ const Game = () => {
   };
   return (
     <section className="game-page">
-      <div>
+      <div className="game-page-title">
         <img src={torch} alt="logo2" />
-        <img src={logo2} alt="logo2" />
+        <img src={logo2} className="game-logo" alt="logo2" />
         <img src={torch} alt="logo2" />
       </div>
       <section className="cardSection">

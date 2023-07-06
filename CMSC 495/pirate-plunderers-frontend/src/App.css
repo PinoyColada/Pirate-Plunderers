@@ -41,6 +41,16 @@ h5 {
   background-size: cover;
 }
 
+.game-page-title {
+  padding-top: 5%;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.game-logo {
+  align-self: center;
+}
+
 #leaderboard-title {
   text-align: center;
   color: rgba(235, 217, 62);
