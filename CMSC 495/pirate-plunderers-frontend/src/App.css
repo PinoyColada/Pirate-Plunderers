@@ -47,6 +47,20 @@ h5 {
   flex-wrap: nowrap;
 }
 
+.user-input {
+  border-style:solid;
+  border-color: black;
+  color: #d7de11;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  outline: none;
+  background-color: transparent;
+  text-align: center;
+  font-family: 'Silkscreen';
+  margin-bottom: 5%;
+}
+
 .game-logo {
   align-self: center;
 }
