@@ -337,12 +337,12 @@ const Game = () => {
               game.over = true
               // call to back-end once a user loses a game to send over their score and username
               fetch("https://pirate-plunderers-backend.onrender.com/score-update", {
-                method:'POST',
+                method: 'POST',
                 body: JSON.stringify({
                   Player: name,
                   Score: score
                 }),
-                  "Content-type":"application/json"
+                "Content-type": "application/json"
               }).then(response => response.json())
             }, 0)
             setGameOver(true);
@@ -564,11 +564,11 @@ const Game = () => {
         <img src={torch} alt="logo2" />
       </div>
       <section className="cardSection">
-        <div className=" container">
+        <div className="container">
           <h1>Instructions</h1>
-          <p>
+          <h3>
             Objective: Your ship is under attack. Destroy the enemy ships.
-          </p>
+          </h3>
           <div className="cards">
             {
               cards.map((card, i) => (
@@ -583,11 +583,13 @@ const Game = () => {
                 </div>
               ))
             }
-
           </div>
+          <h3>
+            To start the game, please enter your name.
+          </h3>
+          <input className="user-form-layout-input" placeholder="Enter your name" type="text" name="Name" onChange={handleNameChange} />
+          <button onClick={() => setName('Test')}>Click this</button>
         </div>
-        <input className="user-form-layout-input" placeholder="Enter your name" type="text" name="Name" onChange={handleNameChange} />
-        <button onClick={() => setName('Test')}>Click this</button>
       </section>
     </section>
   );
