@@ -5,6 +5,8 @@ import logo2 from '../images/logo2.png';
 import torch from '../images/torch.gif';
 import PopUp from '../components/PopUp'
 import photo from "../images/continue_button.png"
+import classnames from 'classnames';
+
 
 const Game = () => {
 
@@ -18,6 +20,12 @@ const Game = () => {
     const target = event.target.value;
     setName(target);
   }
+
+  const imageClass = classnames('back-button continue-button', {
+    disabled: name === ''
+  });
+
+
   useEffect(() => {
 
 
@@ -588,9 +596,9 @@ const Game = () => {
           <h3>
             To start the game, please enter your name.
           </h3>
-          <input className="user-input" placeholder="Enter your name" type="text" name="Name" onChange={handleNameChange} />
-          <button id="button-container">
-            <img className="back-button" onClick={() => setName('Test')} src={photo} alt="continue button" />
+          <input className="user-input" placeholder="Enter your name" type="text" name="Name" value={name} onChange={handleNameChange} />
+          <button disabled={!name} id="button-container">
+            <img disabled={!name} style = {{ opacity: name === '' ? 0.5 : 1 }} className={imageClass} onClick={() => console.log(name)} src={photo} alt="continue button" />
           </button>
         </div>
       </section>

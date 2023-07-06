@@ -108,8 +108,13 @@ h5 {
   pointer-events: painted;
 }
 
-.back-button:hover {
+.back-button:hover{
   filter: brightness(50%)
+}
+
+.disabled {
+  opacity: 0.5;
+  pointer-events: none; /* Disable hover and click events */
 }
 
 .button-section {
