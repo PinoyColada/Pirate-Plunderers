@@ -11,7 +11,7 @@ const Leaderboard = () => {
     // calls the "get_score" route from the back-end
     // and stores it in the "data" state
     useEffect(() => {
-        fetch("/get_score").then(
+        fetch("https://pirate-plunderers-backend.onrender.com/get_score").then(
             res => res.json()
         ).then(
             data => {

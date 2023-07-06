@@ -336,7 +336,7 @@ const Game = () => {
               user.opacity = 0
               game.over = true
               // call to back-end once a user loses a game to send over their score and username
-              fetch("/score-update", {
+              fetch("https://pirate-plunderers-backend.onrender.com/score-update", {
                 method:'POST',
                 body: JSON.stringify({
                   Player: name,
