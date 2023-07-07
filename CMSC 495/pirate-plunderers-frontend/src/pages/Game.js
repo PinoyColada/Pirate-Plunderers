@@ -4,12 +4,16 @@ import enemyPirateImage from '../images/pirate_ship.png';
 import logo2 from '../images/logo2.png';
 import torch from '../images/torch.gif';
 import PopUp from '../components/PopUp'
+import photo from "../images/continue_button.png"
+import classnames from 'classnames';
+
 
 const Game = () => {
 
   const [name, setName] = useState("");
   const [score, setScore] = useState(0);
   const [gameOver, setGameOver] = useState(false);
+  const [startGame, setStartGame] = useState(false);
 
   const canvasRef = useRef(null);
 
@@ -17,10 +21,16 @@ const Game = () => {
     const target = event.target.value;
     setName(target);
   }
+
+  const imageClass = classnames('back-button continue-button', {
+    disabled: name === ''
+  });
+
+
   useEffect(() => {
 
 
-    if (name === "Test") {
+    if (startGame === true) {
 
       const canvas = canvasRef.current;
       const scoreC = document.querySelector('#scoreC')
@@ -337,12 +347,12 @@ const Game = () => {
               game.over = true
               // call to back-end once a user loses a game to send over their score and username
               fetch("https://pirate-plunderers-backend.onrender.com/score-update", {
-                method:'POST',
+                method: 'POST',
                 body: JSON.stringify({
                   Player: name,
                   Score: score
                 }),
-                  "Content-type":"application/json"
+                "Content-type": "application/json"
               }).then(response => response.json())
             }, 0)
             setGameOver(true);
@@ -500,13 +510,13 @@ const Game = () => {
       };
 
     }
-  }, [name]);
+  }, [startGame, name]);
 
   //cards for game instructions
   const [cards] = useState([
     {
       title: <font color="#d7de11">Controls</font>,
-      text: 'Use the "A" and "D" keys to move from left to right. Use the "Spacebar" key to fire. '
+      text: 'Use the "A" and "D" keys to move from left to right. Use the "w" key to fire. '
     },
     {
       title: <font color="#d7de11">Scoring</font>,
@@ -524,12 +534,12 @@ const Game = () => {
 
   ],)
 
-  if (name === "Test" && gameOver !== true) {
+  if (startGame === true && gameOver !== true) {
     return (
       <section className="game-page">
-        <div>
+        <div className="game-page-title">
           <img src={torch} alt="logo2" />
-          <img src={logo2} alt="logo2" />
+          <img src={logo2} className="game-logo" alt="logo2" />
           <img src={torch} alt="logo2" />
         </div>
         <div style={{ position: 'relative' }}>
@@ -551,24 +561,26 @@ const Game = () => {
         </div>
       </section>
     )
-  } else if (name === "Test" && gameOver === true) {
+  } else if (startGame === true && gameOver === true) {
     return (
+      <section className="game-page">
       <PopUp score={score} name={name} />
+      </section>
     )
   };
   return (
     <section className="game-page">
-      <div>
+      <div className="game-page-title">
         <img src={torch} alt="logo2" />
-        <img src={logo2} alt="logo2" />
+        <img src={logo2} className="game-logo" alt="logo2" />
         <img src={torch} alt="logo2" />
       </div>
       <section className="cardSection">
-        <div className=" container">
+        <div className="game-container">
           <h1>Instructions</h1>
-          <p>
+          <h3>
             Objective: Your ship is under attack. Destroy the enemy ships.
-          </p>
+          </h3>
           <div className="cards">
             {
               cards.map((card, i) => (
@@ -583,11 +595,15 @@ const Game = () => {
                 </div>
               ))
             }
-
           </div>
+          <h3>
+            To start the game, please enter your name.
+          </h3>
+          <input className="user-input" placeholder="Enter your name here" type="text" name="Name" value={name} onChange={handleNameChange} />
+          <button disabled={!name} id="button-container">
+            <img disabled={!name} style = {{ opacity: name === '' ? 0.5 : 1 }} className={imageClass} onClick={() => setStartGame(true)} src={photo} alt="continue button" />
+          </button>
         </div>
-        <input className="user-form-layout-input" placeholder="Enter your name" type="text" name="Name" onChange={handleNameChange} />
-        <button onClick={() => setName('Test')}>Click this</button>
       </section>
     </section>
   );
