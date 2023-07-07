@@ -539,7 +539,7 @@ const Game = () => {
       <section className="game-page">
         <div className="game-page-title">
           <img src={torch} alt="logo2" />
-          <img src={logo2} alt="logo2" />
+          <img src={logo2} className="game-logo" alt="logo2" />
           <img src={torch} alt="logo2" />
         </div>
         <div style={{ position: 'relative' }}>
@@ -569,7 +569,7 @@ const Game = () => {
     )
   };
   return (
-    <section className="game-page game-over">
+    <section className="game-page">
       <div className="game-page-title">
         <img src={torch} alt="logo2" />
         <img src={logo2} className="game-logo" alt="logo2" />
