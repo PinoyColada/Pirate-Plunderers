@@ -13,6 +13,7 @@ const Game = () => {
   const [name, setName] = useState("");
   const [score, setScore] = useState(0);
   const [gameOver, setGameOver] = useState(false);
+  const [startGame, setStartGame] = useState(false);
 
   const canvasRef = useRef(null);
 
@@ -29,7 +30,7 @@ const Game = () => {
   useEffect(() => {
 
 
-    if (name === "Test") {
+    if (startGame === true) {
 
       const canvas = canvasRef.current;
       const scoreC = document.querySelector('#scoreC')
@@ -509,7 +510,7 @@ const Game = () => {
       };
 
     }
-  }, [name]);
+  }, [startGame, name]);
 
   //cards for game instructions
   const [cards] = useState([
@@ -533,7 +534,7 @@ const Game = () => {
 
   ],)
 
-  if (name === "Test" && gameOver !== true) {
+  if (startGame === true && gameOver !== true) {
     return (
       <section className="game-page">
         <div>
@@ -560,7 +561,7 @@ const Game = () => {
         </div>
       </section>
     )
-  } else if (name === "Test" && gameOver === true) {
+  } else if (startGame === true && gameOver === true) {
     return (
       <PopUp score={score} name={name} />
     )
@@ -596,9 +597,9 @@ const Game = () => {
           <h3>
             To start the game, please enter your name.
           </h3>
-          <input className="user-input" placeholder="Enter your name" type="text" name="Name" value={name} onChange={handleNameChange} />
+          <input className="user-input" placeholder="Enter your name here" type="text" name="Name" value={name} onChange={handleNameChange} />
           <button disabled={!name} id="button-container">
-            <img disabled={!name} style = {{ opacity: name === '' ? 0.5 : 1 }} className={imageClass} onClick={() => console.log(name)} src={photo} alt="continue button" />
+            <img disabled={!name} style = {{ opacity: name === '' ? 0.5 : 1 }} className={imageClass} onClick={() => setStartGame(true)} src={photo} alt="continue button" />
           </button>
         </div>
       </section>
