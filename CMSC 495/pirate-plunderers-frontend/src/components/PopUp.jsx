@@ -19,7 +19,7 @@ const PopUp = (props) => {
                     <h1>GAME OVER</h1>
                     <h3>Your score was {props.score}, {props.name}</h3>
                 </div>
-                <div style={{ display: 'flex', alignContent: 'stretch'}}>
+                <div style={{ display: 'flex'}}>
                     <PlayAgainButton />
                     <MainMenuButton />
                 </div>

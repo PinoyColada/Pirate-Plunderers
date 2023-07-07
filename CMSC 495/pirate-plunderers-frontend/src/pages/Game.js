@@ -576,7 +576,7 @@ const Game = () => {
         <img src={torch} alt="logo2" />
       </div>
       <section className="cardSection">
-        <div className="container">
+        <div className="game-container">
           <h1>Instructions</h1>
           <h3>
             Objective: Your ship is under attack. Destroy the enemy ships.

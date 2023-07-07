@@ -41,10 +41,6 @@ h5 {
   background-size: cover;
 }
 
-.game-over {
-
-}
-
 .game-page-title {
   padding-top: 5%;
   display: flex;
@@ -147,10 +143,19 @@ h5 {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  padding-top: 40px;
+}
+
+.game-container{
   max-width: 1300px;
   width: 100%;
-  margin: 10%;
+  margin:auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
+
 
 .main-menu-container {
   display: flex;
