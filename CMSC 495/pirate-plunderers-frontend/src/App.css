@@ -41,6 +41,10 @@ h5 {
   background-size: cover;
 }
 
+.game-over {
+
+}
+
 .game-page-title {
   padding-top: 5%;
   display: flex;

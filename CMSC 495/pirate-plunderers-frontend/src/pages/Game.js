@@ -563,11 +563,13 @@ const Game = () => {
     )
   } else if (startGame === true && gameOver === true) {
     return (
+      <section className="game-page">
       <PopUp score={score} name={name} />
+      </section>
     )
   };
   return (
-    <section className="game-page">
+    <section className="game-page game-over">
       <div className="game-page-title">
         <img src={torch} alt="logo2" />
         <img src={logo2} className="game-logo" alt="logo2" />
