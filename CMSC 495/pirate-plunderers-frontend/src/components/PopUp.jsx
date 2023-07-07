@@ -1,18 +1,23 @@
-import React, { useState } from "react";
+import logo2 from '../images/logo2.png';
+import torch from '../images/torch.gif';
+import game_over from "../images/game_over_pic.png"
 
 const PopUp = (props) => {
 
     return (
         <>
-        <div className="popup">
-            <div className="overlay"></div>
-            <div className="popup-content">
-                <h2>Game Over!</h2>
-                <p>Your score was {props.score}, {props.name}</p>
-                <button>Play again</button>
-                <button>Back to main menu</button>
-            </div>
-        </div>
+            <section className="game-page">
+                <div className="game-page-title">
+                    <img src={torch} alt="logo2" />
+                    <img src={logo2} className="game-logo" alt="logo2" />
+                    <img src={torch} alt="logo2" />
+                </div>
+                <div className="game-lost-container">
+                    <img style={{ width: '20%', height: '20%', paddingTop: '5%' }} src={game_over} alt="game over" />
+                    <h1>GAME OVER</h1>
+                    <h3>Your score was {props.score}, {props.name}</h3>
+                </div>
+            </section>
         </>
     )
 }

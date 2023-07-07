@@ -516,7 +516,7 @@ const Game = () => {
   const [cards] = useState([
     {
       title: <font color="#d7de11">Controls</font>,
-      text: 'Use the "A" and "D" keys to move from left to right. Use the "Spacebar" key to fire. '
+      text: 'Use the "A" and "D" keys to move from left to right. Use the "w" key to fire. '
     },
     {
       title: <font color="#d7de11">Scoring</font>,
@@ -537,7 +537,7 @@ const Game = () => {
   if (startGame === true && gameOver !== true) {
     return (
       <section className="game-page">
-        <div>
+        <div className="game-page-title">
           <img src={torch} alt="logo2" />
           <img src={logo2} alt="logo2" />
           <img src={torch} alt="logo2" />
