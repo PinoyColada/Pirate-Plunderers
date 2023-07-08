@@ -10,6 +10,7 @@ const AboutUs = () => {
 
     return (
         <>
+            {/*Calls video background and loops*/}
             <video autoPlay loop muted className="bg-vid">
                 <source src={background} type="video/mp4" />
             </video>
@@ -17,7 +18,7 @@ const AboutUs = () => {
                 <div className="main-content-top">
                     <h1 id="about-us-title">Meet "the bro-grammers" team</h1>
                 </div>
-
+                {/*Calls the MemberInfo component with each member's information*/}
                 <div className="main-content-bottom">
                     <div className="section-container">
                         <MemberInfo name="Ryan Hatamosa"
@@ -46,6 +47,7 @@ const AboutUs = () => {
                         />
                     </div>
                 </div>
+                {/*Calls back button component to navigate the user back the to main menu*/}
                 <div className="button-section">
                     <div>
                         <BackButton />

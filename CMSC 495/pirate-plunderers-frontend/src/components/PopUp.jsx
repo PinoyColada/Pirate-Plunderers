@@ -4,6 +4,8 @@ import game_over from "../images/game_over_pic.png"
 import MainMenuButton from './MainMenuButton';
 import PlayAgainButton from './PlayAgainButton';
 
+
+// displays the game over section of the game page
 const PopUp = (props) => {
 
     return (

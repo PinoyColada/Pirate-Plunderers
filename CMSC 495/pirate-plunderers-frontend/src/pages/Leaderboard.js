@@ -6,6 +6,7 @@ import BackButton from "../components/BackButton";
 
 const Leaderboard = () => {
 
+    // define state variable
     const [data, setData] = useState([{}])
 
     // calls the "get_score" route from the back-end
@@ -20,6 +21,7 @@ const Leaderboard = () => {
         )
     },[])
 
+    // generates numbers on the table content page
     function createNums(n) {
         let nums = [];
         for (let i = 1; i <= n; i++) {
@@ -31,6 +33,7 @@ const Leaderboard = () => {
 
     return (
         <>
+            {/*Calls video background and loops*/}
             <video autoPlay loop muted className="bg-vid">
                 <source src={background} type="video/mp4" />
             </video>
@@ -41,17 +44,19 @@ const Leaderboard = () => {
 
                 <div className="main-content-bottom">
                     <div className="section-container">
+                        {/*Calls the createnums functions*/}
                         <h4 className="column-container">
                             <u>Ranking</u>
                             {createNums(10)}
                         </h4>
+                        {/*Maps through player and returns them on the page*/}
                         <h4 className="column-container">
                             <u>Name</u>
                             {data.map(user => {
                                 return <p className="table-content">{user.Player}</p>;
                             })}
                         </h4>
-                        
+                        {/*Maps through score and returns them on the page*/}
                         <h4 className="column-container">
                             <u>Score</u>
                             {data.map(user => {
@@ -60,6 +65,7 @@ const Leaderboard = () => {
                         </h4>
                     </div>
                 </div>
+                {/*Calls back button component to navigate the user back the to main menu*/}
                 <div className="button-section">
                     <div>
                         <BackButton />
