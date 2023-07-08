@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import photo from "../images/about_us_button.png"
 
-// This component is the back button that navigates back to the main menu
+// This component is the about us button that navigates to the about us page
 const AboutusButton = () => {
     const navigate = useNavigate();
 

@@ -10,6 +10,7 @@ import classnames from 'classnames';
 
 const Game = () => {
 
+  // define state variables
   const [name, setName] = useState("");
   const [score, setScore] = useState(0);
   const [gameOver, setGameOver] = useState(false);
@@ -17,16 +18,22 @@ const Game = () => {
 
   const canvasRef = useRef(null);
 
+  // handle input change for name
   const handleNameChange = (event) => {
+    // get the value from the input field
     const target = event.target.value;
+    // update the name state
     setName(target);
   }
 
+  // define CSS class based on name value
   const imageClass = classnames('back-button continue-button', {
+    // apply 'disabled' class if name is empty
     disabled: name === ''
   });
 
-
+  // this effect runs when the 'startGame' state is set to true
+  // and creates the game
   useEffect(() => {
 
 
@@ -534,6 +541,7 @@ const Game = () => {
 
   ],)
 
+  /*Loads the game section if startGame is true and gameOver is false*/
   if (startGame === true && gameOver !== true) {
     return (
       <section className="game-page">
@@ -561,13 +569,15 @@ const Game = () => {
         </div>
       </section>
     )
+    /*Loads the game over section if startGame is true and gameOver is true*/
   } else if (startGame === true && gameOver === true) {
     return (
       <section className="game-page">
-      <PopUp score={score} name={name} />
+        <PopUp score={score} name={name} />
       </section>
     )
   };
+  /*Loads the instruction section by default*/
   return (
     <section className="game-page">
       <div className="game-page-title">
@@ -581,6 +591,7 @@ const Game = () => {
           <h3>
             Objective: Your ship is under attack. Destroy the enemy ships.
           </h3>
+          {/*Maps through each card section containing specific instructions about the game*/}
           <div className="cards">
             {
               cards.map((card, i) => (
@@ -599,9 +610,11 @@ const Game = () => {
           <h3>
             To start the game, please enter your name.
           </h3>
+          {/*Allows the user to enter their name, and disables the button until there is value
+            present in the input box*/}
           <input className="user-input" placeholder="Enter your name here" type="text" name="Name" value={name} onChange={handleNameChange} />
           <button disabled={!name} id="button-container">
-            <img disabled={!name} style = {{ opacity: name === '' ? 0.5 : 1 }} className={imageClass} onClick={() => setStartGame(true)} src={photo} alt="continue button" />
+            <img disabled={!name} style={{ opacity: name === '' ? 0.5 : 1 }} className={imageClass} onClick={() => setStartGame(true)} src={photo} alt="continue button" />
           </button>
         </div>
       </section>

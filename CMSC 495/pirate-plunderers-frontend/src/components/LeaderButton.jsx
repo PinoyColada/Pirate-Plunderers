@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import photo from "../images/leaderboard_button.png"
 
-// This component is the back button that navigates back to the main menu
+// This component is the leader board button that navigates to the leaderboard page
 const LeaderButton = () => {
     const navigate = useNavigate();
 

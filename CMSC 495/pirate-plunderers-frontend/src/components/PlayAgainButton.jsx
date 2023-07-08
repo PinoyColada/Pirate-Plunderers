@@ -1,6 +1,6 @@
 import photo from "../images/play_again_button.png"
 
-// This component is the main menu button that navigates back to the main menu
+// This component is the play again button that refreshes the game page
 const PlayAgainButton = () => {
 
     return (
