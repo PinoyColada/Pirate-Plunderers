@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
-import cannonImage from '../images/cannon.png';
+import playerRight from '../images/player_pirate_ship_right.png'
+import playerLeft from '../images/player_pirate_ship_left.png'
 import enemyPirateImage from '../images/pirate_ship.png';
 import logo2 from '../images/logo2.png';
 import torch from '../images/torch.gif';
@@ -38,7 +39,6 @@ const Game = () => {
 
 
     if (startGame === true) {
-
       const canvas = canvasRef.current;
       const scoreC = document.querySelector('#scoreC')
       const c = canvas.getContext('2d')
@@ -54,7 +54,7 @@ const Game = () => {
           //making player visible and loading image, what player will look like
           this.opacity = 1
           const image = new Image()
-          image.src = cannonImage
+          image.src = playerRight
           image.onload = () => {
             const size = .28
             this.image = image
@@ -319,7 +319,7 @@ const Game = () => {
         requestAnimationFrame(create)
 
         //Layout of game
-        c.fillStyle = "blue"
+        c.fillStyle = "rgba(0, 0, 200)"
         c.fillRect(0, 0, canvas.width, canvas.height)
 
         //giving player ability to move
@@ -461,10 +461,12 @@ const Game = () => {
         switch (key) {
           case 'a':
             console.log('left');
+            // user.image.src = playerLeft
             controls.a.pressed = true;
             break;
           case 'd':
             console.log('right');
+            // user.image.src = playerRight
             controls.d.pressed = true;
             break;
           case 'w':
@@ -565,7 +567,7 @@ const Game = () => {
           >
             <span>Score:</span> <span id="scoreC">0</span>
           </p>
-          <canvas ref={canvasRef} width="1024" height="576" />
+          <canvas id="game-background" ref={canvasRef} width="1024" height="576" />
         </div>
       </section>
     )
