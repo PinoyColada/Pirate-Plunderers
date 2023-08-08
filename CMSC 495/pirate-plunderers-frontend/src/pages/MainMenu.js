@@ -1,7 +1,8 @@
 import background from "../images/main_background.mp4";
-import StartButton from "../components/StartButton";
-import LeaderButton from "../components/LeaderButton";
-import AboutusButton from "../components/AboutusButton";
+import MenuButtons from "../components/MenuButtons";
+import StartButton from "../images/start_game_button.png";
+import LeaderButton from "../images/leaderboard_button.png";
+import AboutusButton from "../images/about_us_button.png";
 import logo from '../images/logo.png';
 import logo2 from '../images/logo2.png';
 
@@ -27,9 +28,24 @@ const MainMenu = () => {
         <div className="main-button-section">
             <div className="menu-opener" style={{paddingBottom: '40px'}}>
                 <h1 id="about-us-title">Main Menu</h1>
-                <StartButton style={{fontSize: '1.2em'}} />
-                <LeaderButton style={{fontSize: '1.2em'}} />
-                <AboutusButton style={{fontSize: '1.2em'}} />
+                <MenuButtons
+                    id="startbutton" 
+                    nav="/game"
+                    img={StartButton}
+                    alt="Start Button"
+                    style={{fontSize: '1.2em'}} />
+                <MenuButtons 
+                    id="leaderbutton"
+                    nav="/leaderBoard"
+                    img={LeaderButton}
+                    alt="Leaderboard Button"
+                    style={{fontSize: '1.2em'}} />
+                <MenuButtons 
+                    id="aboutusbutton"
+                    nav="/aboutUs"
+                    img={AboutusButton}
+                    alt="About Us Button"
+                    style={{fontSize: '1.2em'}} />
             </div>
         </div>
         </>
